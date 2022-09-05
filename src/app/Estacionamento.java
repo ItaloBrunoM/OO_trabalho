@@ -10,6 +10,7 @@ import java.time.Duration;
 
 import exceptions.DescricaoEmBrancoException;
 import exceptions.ObjetoNaoEncontradoException;
+import exceptions.ValorAcessoInvalidoException;
 
 public class Estacionamento {
     private String nome;
@@ -179,7 +180,7 @@ public class Estacionamento {
         DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         switch (menu) {
             case 0:
-                String placa = JOptionPane.showInputDialog(null, "Insira a placa do acesso:");
+                String placa = JOptionPane.showInputDialog(null, "Insira a placa do acesso no formato XXXXX:");
                 String dataEnt_ = JOptionPane.showInputDialog(null, "Insira a data de entrada no formato dd/mm/aaaa :");
                 String dataSai_ = JOptionPane.showInputDialog(null, "Insira a data de saída no formato dd/mm/aaaa :");
                 String horaEnt_ = JOptionPane.showInputDialog(null, "Insira o horário de entrada no formato hh:mm :");
@@ -191,6 +192,14 @@ public class Estacionamento {
                     } catch (DescricaoEmBrancoException exc) {
 
                         exc.printStackTrace();
+                    }
+                }
+                if (placa.contains("-") || dataEnt_.contains("-") || dataSai_.contains("-")
+                        || horaEnt_.contains("-") || horaSai_.contains("-")) {
+                    try {
+                        throw new ValorAcessoInvalidoException();
+                  } catch (ValorAcessoInvalidoException exc) {
+                    exc.printStackTrace();
                     }
                 }
                 LocalDate dataEnt = LocalDate.parse(dataEnt_, formatoData);
@@ -243,7 +252,7 @@ public class Estacionamento {
                 }
                 break;
             case 1:
-                String placaMes = JOptionPane.showInputDialog(null, "Insira a placa do acesso :");
+                String placaMes = JOptionPane.showInputDialog(null, "Insira a placa do acesso no formato XXXXX:");
                 String inicioMes_ = JOptionPane.showInputDialog(null,
                         "Insira a data de inicio do acesso mensal no formato dd/mm/aaaa :");
                 String fimMes_ = JOptionPane.showInputDialog(null,
@@ -263,7 +272,7 @@ public class Estacionamento {
                 acessos.add(aM);
                 break;
             case 2:
-                String placaEvento = JOptionPane.showInputDialog(null, "Insira a placa do acesso:");
+                String placaEvento = JOptionPane.showInputDialog(null, "Insira a placa do acesso no formato XXXXX:");
                 String[] menuEv = menuListaEventos();
                 if (menuEv.length == 0) {
                     JOptionPane.showMessageDialog(null, "Não há nenhum evento cadastrado ainda, abrindo tela de cadastro de evento");
@@ -466,7 +475,7 @@ public class Estacionamento {
     private void editarAcesso(Acesso a) {
         DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         if (a.getClass().getSimpleName().equalsIgnoreCase("AcessoMensal")) {
-            String placaMes = JOptionPane.showInputDialog(null, "Insira a placa do acesso:");
+            String placaMes = JOptionPane.showInputDialog(null, "Insira a placa do acesso no formato XXXXX:");
             String inicioMes_ = JOptionPane.showInputDialog(null,
                     "Insira a data de inicio do acesso mensal no formato dd/mm/aaaa :");
             String fimMes_ = JOptionPane.showInputDialog(null,
@@ -486,7 +495,7 @@ public class Estacionamento {
             a.setDataSai(fimMes);
             a.setValor(valorAtualizado);
         } else {
-            String placa = JOptionPane.showInputDialog(null, "Insira a placa do acesso:");
+            String placa = JOptionPane.showInputDialog(null, "Insira a placa do acesso no formato XXXXX:");
             String dataEnt_ = JOptionPane.showInputDialog(null, "Insira a data de entrada no formato dd/mm/aaaa :");
             String dataSai_ = JOptionPane.showInputDialog(null, "Insira a data de saída no formato dd/mm/aaaa :");
             String horaEnt_ = JOptionPane.showInputDialog(null, "Insira o horário de entrada no formato hh:mm :");
