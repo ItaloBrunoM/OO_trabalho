@@ -3,7 +3,7 @@ package app;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class AcessoEvento extends Acesso{
+public class AcessoEvento extends Acesso {
 
     Evento evento;
 
@@ -13,6 +13,8 @@ public class AcessoEvento extends Acesso{
         this.evento = evento;
     }
 
+    public Evento getEvento() {
+        return evento;
+    }
 
-    
 }

@@ -6,9 +6,9 @@ import java.time.LocalTime;
 public class Acesso {
     String placa;
     LocalDate dataEnt,
-              dataSai;    
+            dataSai;
     private LocalTime horaEnt,
-                      horaSai;
+            horaSai;
     float valor;
 
     Acesso(String placa, LocalTime horaEnt, LocalTime horaSai, LocalDate dataEnt, LocalDate dataSai, float valor) {
@@ -19,6 +19,7 @@ public class Acesso {
         this.dataSai = dataSai;
         this.valor = valor;
     }
+
     Acesso(String placa, LocalDate dataEnt, LocalDate dataSai, float valor) {
         this.placa = placa;
         this.dataEnt = dataEnt;
@@ -49,21 +50,27 @@ public class Acesso {
     public void setValor(float valor) {
         this.valor = valor;
     }
+
     public String getPlaca() {
         return placa;
     }
+
     public LocalDate getDataEnt() {
         return dataEnt;
     }
+
     public LocalDate getDataSai() {
         return dataSai;
     }
+
     public LocalTime getHoraEnt() {
         return horaEnt;
     }
+
     public LocalTime getHoraSai() {
         return horaSai;
     }
+
     public float getValor() {
         return valor;
     }
