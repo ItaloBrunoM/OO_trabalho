@@ -77,7 +77,7 @@ public class AlunoView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(newEmail);
 
         desktopPane.add(jScrollPane2);
-        jScrollPane2.setBounds(210, 170, 110, 22);
+        jScrollPane2.setBounds(210, 170, 110, 42);
 
         jScrollPane3.setViewportView(newNome);
 
