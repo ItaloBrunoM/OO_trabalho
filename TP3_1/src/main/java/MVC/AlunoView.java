@@ -139,18 +139,6 @@ public class AlunoView extends javax.swing.JFrame {
     public String getEmail(){
         return emailText.getText();
     }
-    /*public String getNewNome(){
-        return newNome.getText();
-    }
-    public String getNewCurso(){
-        return newCurso.getText();
-    }
-    public String getNewMatricula(){
-        return newMatricula.getText();
-    }
-    public String getNewEmail(){
-        return newEmail.getText();
-    }*/
     public void setNewNome(String nome){
         newNome.setText(nome);
     }
