@@ -5,6 +5,21 @@ Projeto com o intuito de por em prática o paradigma da programação orientada 
 
 <br>
 
+
+<div align='center'>
+<p>Diagrama UML de Objetos:</p>
+<img src='https://raw.githubusercontent.com/ItaloBrunoM/OO_trabalho/Main/Trabalho1_estacionamento-Objetos.jpg'></img>
+</div>
+
+<br><br>
+
+<div align='center'>
+<p>Diagrama UML de Classes:</p>
+<img src='https://raw.githubusercontent.com/ItaloBrunoM/OO_trabalho/Main/Trabalho1_estacionamento-Classes.jpg'></img>
+</div>
+
+<br><br>
+
 <p>Grupo:</p>
 <li>Douglas Alves dos Santos - 211029620</li>
 <li>Italo Bruno Avelino da Silva Melo - 190133813</li>
